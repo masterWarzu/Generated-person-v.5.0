@@ -69,23 +69,13 @@ public class Human
         }
     }
 
-    void generatorNames(String []arrayRace, int arraySize)
-    {
-        if(GenderGenerated.sexChoice.equals("Мужской"))
-            name = arrayRace[generateNumber.generate(arraySize)];
-        else
-            name = arrayRace[generateNumber.generate(arraySize)];
-    }
-
     String name, surname, subraceOut;
     void subraceDamaren()
     {
-        /*if(GenderGenerated.sexChoice.equals("Мужской"))
+        if(GenderGenerated.sexChoice.equals("Мужской"))
             name = damarenMaleNames[generateNumber.generate(damarenMaleNames.length)];
         else
-            name = damaranFemaleNames[generateNumber.generate(damaranFemaleNames.length)];*/
-
-        generatorNames();
+            name = damaranFemaleNames[generateNumber.generate(damaranFemaleNames.length)];
 
         surname = damaranSurnames[generateNumber.generate(damaranSurnames.length)];
 
