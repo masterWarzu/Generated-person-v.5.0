@@ -4,8 +4,10 @@ public class Dragonborn
 
     String []dragonbornFemaleNames = {"Акра", "Бири", "Даар", "Жери", "Кава", "Коринн", "Мишанн", "Нала", "Перра", "Райанн", "Сора", "Сурина", "Тава", "Уаджит", "Фарида", "Хавилар", "Харанн"};
 
-    String []dragonbornClans = {"Вертизатургьеш", "Даардендриан", "Дельмирев", "Драхедандион", "Кепешкмолик", "Керрилон", "Кимбатуул", "Клеттинтьялор", "Линзакасендалор", "Мьястан", "Неммонис" +
+    String []dragonbornClans = {"Вертизатургьеш", "Даардендриан", "Дельмирев", "Драхедандион", "Кепешкмолик", "Керрилон", "Кимбатуул", "Клеттинтьялор", "Линзакасендалор", "Мьястан", "Неммонис",
                                     "Нориксиус", "Офиншталаджиир", "Прексиджандилин", "Турнурот", "Фенкенкабрадон", "Шестенделиат", "Яржерит"};
+
+    String []dragonbornHeritage = {"Белый", "Бронзовый", "Зелёный", "Золотой", "Красный", "Латунный", "Медный", "Серебряный", "Синий", "Чёрный"};
 
     Generator generateNumber;
     GenderGenerated generateGender;
@@ -18,11 +20,11 @@ public class Dragonborn
         generateGender = new GenderGenerated();
         generateName();
         generateClan();
+        dragonHeritage();
         AgeGenerated.max = 50;
         AgeGenerated.min = 15;
         generateAge = new AgeGenerated();
         generateSize = new SizeGenerated();
-        subraceChoice();
     }
 
     String name;
@@ -40,31 +42,19 @@ public class Dragonborn
         clan = dragonbornClans[generateNumber.generate(dragonbornClans.length)];
     }
 
-    int subRace;
-    void subraceChoice()
+    String heritage;
+    void dragonHeritage()
     {
-
+        heritage = dragonbornHeritage[generateNumber.generate(dragonbornHeritage.length)];
     }
 
-    String subraceOut;
-    void subraceHighElf()
-    {
-
-    }
-
-    void subraceForestElf()
-    {
-
-    }
-
-
-    void dragonbornOutInfo()
+        void dragonbornOutInfo()
     {
         System.out.println("Раса: " + RaceGenerated.raceChoice);
-        System.out.println("Подраса: " + subraceOut);
         System.out.println("Пол: " + GenderGenerated.sexChoice);
         System.out.println("Имя: " + name);
         System.out.println("Клан: " + clan);
+        System.out.println("Драконье наследие: " + heritage);
         System.out.println("Возраст: " + AgeGenerated.ageChoice);
         System.out.println("Рост: " + SizeGenerated.sizeChoice);    // переделать генерацию размера
         System.out.println("Скорость: 30 футов (6 клеток)");
