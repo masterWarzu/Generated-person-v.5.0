@@ -50,6 +50,7 @@ public class RaceGenerated
                 break;
             case "Тифлинг":
                 Tiefling tiefling = new Tiefling();
+                break;
         }
     }
 }
